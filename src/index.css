@@ -1,20 +1,56 @@
+@import "normalize.css";
+@font-face {
+  font-family: "Roboto";
+  src: url("./fonts/Roboto-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.app {
+.container {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+.button {
+  display: flex;
+  width: fit-content;
+  height: fit-content;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: #f70;
+  align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+}
+.label {
+  color: #fff;
+  font-size: 17px;
+}
+.counter {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 8px;
+  background: rgba(255,255,255,0.122);
+}
+.product-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  width: 350px;
+  background-color: #ebebeb;
 }
