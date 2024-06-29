@@ -20,7 +20,7 @@ body {
 }
 .button {
   display: flex;
-  width: fit-content;
+  width: max-content;
   height: fit-content;
   padding: 16px;
   border-radius: 16px;
@@ -29,13 +29,17 @@ body {
   align-items: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
 }
-.label {
+.button .label {
   color: #fff;
   font-size: 17px;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-.counter {
-  width: 24px;
+.button .counter {
+  min-width: 24px;
   height: 24px;
   color: #fff;
   font-size: 15px;
@@ -46,8 +50,12 @@ body {
   margin-left: 8px;
   background: rgba(255,255,255,0.122);
 }
+.button .counter .quantity {
+  padding: 0 6px;
+}
 .product-card {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 200px;
