@@ -6,9 +6,21 @@ type ButtonGroupContext = {
 
 const ButtonGroupContext = createContext<ButtonGroupContext | undefined>(undefined)
 
-type Props = {
-    title?: string,
-    counterValue?: number,
+type CommonProps = {
+    label: string,
+    buttonStyle: 'primary' | 'secondary',
+    buttonSize: 28 | 36 | 56,
+    state: 'enabled' | 'loading' | 'disabled',
+}
+
+type Props = CommonProps & {
+    counter: false
+} | CommonProps & {
+    counter: true,
+    quantity: number | string,
+    // counterStyle: 'primary' | 'secondary',
+    // stroke: true | false,
+    // pulse: true | false
 }
 
 type ButtonGroupProps = PropsWithChildren & {
@@ -23,30 +35,33 @@ const useButtonGroupContext = () => {
     return context
 }
 
-export const ButtonGroup = ({ children, props }: ButtonGroupProps) => {
+export const Button = ({ children, props }: ButtonGroupProps) => {
     return (
         <ButtonGroupContext.Provider value={{props}}>
-            <div className="button-group">
+            <button className="button">
                 {children}
-            </div>
+            </button>
         </ButtonGroupContext.Provider>
     )
 }
 
-const Button = () => {
+const Label = () => {
     const {props} = useButtonGroupContext()
-    return <button>{props.title}</button>
+    return <div className="label">{props.label}
+    </div>
 }
-ButtonGroup.Button = Button
+Button.Label = Label
 
 const Counter = () => {
     const {props} = useButtonGroupContext()
-    return <div>{props.counterValue}</div>
+    return <div className="counter">
+        <div className="quantity">{props.counter && props.quantity}</div>
+    </div>
 }
-ButtonGroup.Counter = Counter
+Button.Counter = Counter
 
 const ProgressIndicator = () => {
     // const {props} = useButtonGroupContext()
     return <div>Loading...</div>
 }
-ButtonGroup.ProgressIndicator = ProgressIndicator
+Button.ProgressIndicator = ProgressIndicator

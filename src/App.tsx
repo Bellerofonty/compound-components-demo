@@ -1,19 +1,10 @@
 import React from 'react';
-import {ButtonGroup} from './components/ButtonGroup'
+import {ProductCard} from './components/ProductCard'
 
 function App() {
     return (
-        <div className="app">
-            <ButtonGroup
-                props={{
-                    title: "Title",
-                    counterValue: 3
-                }}
-            >
-                <ButtonGroup.Button/>
-                <ButtonGroup.Counter/>
-                <ButtonGroup.ProgressIndicator/>
-            </ButtonGroup>
+        <div className="container">
+            <ProductCard/>
         </div>
     );
 }
