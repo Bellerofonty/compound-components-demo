@@ -11,6 +11,7 @@ type CommonProps = {
     buttonStyle: 'primary' | 'secondary',
     buttonSize: 28 | 36 | 56,
     state: 'enabled' | 'loading' | 'disabled',
+    onButtonClick?: Function
 }
 
 type Props = CommonProps & {
@@ -19,6 +20,7 @@ type Props = CommonProps & {
     counter: true,
     quantity: number | string,
     // counterStyle: 'primary' | 'secondary',
+    counterSize: 8 | 12 | 16 | 20 | 24
     // stroke: true | false,
     // pulse: true | false
 }
@@ -38,8 +40,12 @@ const useButtonGroupContext = () => {
 export const Button = ({ children, props }: ButtonGroupProps) => {
     return (
         <ButtonGroupContext.Provider value={{props}}>
-            <button className="button">
+            <button
+                className={`button size${props.buttonSize}`}
+                onClick={(e) => props.onButtonClick && props.onButtonClick(e.currentTarget)}
+            >
                 {children}
+                <div className="overlay"/>
             </button>
         </ButtonGroupContext.Provider>
     )
@@ -54,14 +60,17 @@ Button.Label = Label
 
 const Counter = () => {
     const {props} = useButtonGroupContext()
-    return <div className="counter">
+    if (!props.counter) {
+        return <></>
+    }
+    return <div className={`counter size${props.counterSize}`}>
         <div className="quantity">{props.counter && props.quantity}</div>
     </div>
 }
 Button.Counter = Counter
 
-const ProgressIndicator = () => {
+const Loader = () => {
     // const {props} = useButtonGroupContext()
     return <div>Loading...</div>
 }
-Button.ProgressIndicator = ProgressIndicator
+Button.Loader = Loader

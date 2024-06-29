@@ -24,30 +24,48 @@ body
   max-width 100%
   width fit-content
   height fit-content
-  padding 16px
-  border-radius 16px
   border none
   background #FF7700
   align-items center
-
   font-family 'Roboto', sans-serif
   font-weight 500
+  white-space: nowrap
+  overflow: hidden
 
-  white-space: nowrap;
-  overflow: hidden;
+  &.size56
+    padding 16px
+    border-radius 16px
+    font-size 17px
+    column-gap 8px
+    .loader
+      width 24px
+      height 24px
 
+  &.size36
+    padding 8px 12px
+    border-radius 12px
+    font-size 15px
+    column-gap 6px
+    .loader
+      width 20px
+      height 20px
+
+  &.size28
+    padding 6px 10px
+    border-radius 9.3px
+    font-size 13px
+    column-gap 4px
+    .loader
+      width 16px
+      height 16px
 
   .label
     color #FFFFFF
-    font-size 17px
-    text-overflow: ellipsis;
-    overflow: hidden;
+    text-overflow ellipsis
+    overflow: hidden
 
   .counter
-    min-width 24px
-    height 24px
     color #FFFFFF
-    font-size 15px
     border-radius 12px
     display flex
     align-items center
@@ -56,14 +74,66 @@ body
     background: #FFFFFF1F
     flex-shrink 0
 
-    .quantity
-      padding 0 6px
+    &.size24
+      min-height 24px
+      min-width 24px
+      font-size 15px
+
+      .quantity
+        padding 0 6px
+
+    &.size20
+      min-height 20px
+      min-width 20px
+      font-size 13px
+
+      .quantity
+        padding 0 4px
+
+    &.size16
+      min-height 16px
+      min-width 16px
+      font-size 11px
+
+      .quantity
+        padding 0 4px
+
+    &.size12
+      width 12px
+      height 12px
+
+      .quantity
+        display none
+
+    &.size8
+      width 8px
+      height 8px
+
+      .quantity
+        display none
+
+
+.button:hover
+  .label
+  .counter
+    transform scale(1.05)
+    -timing-function cubic-bezier(0, -0.3, 0.5, 1.3)
+    transition-duration 500 ms
+
+.button:active
+  .label
+  .counter
+    transform scale(0.95)
+    -timing-function cubic-bezier(0, -0.3, 0.5, 1.3)
+    transition-duration 500 ms
 
 .product-card
   display flex
   flex-direction column
   align-items center
   justify-content: space-evenly;
-  height 400px
-  width 350px
+  height 90vh
+  width 340px
   background-color #ebebeb
+  border-radius 24px
+  padding 24px
