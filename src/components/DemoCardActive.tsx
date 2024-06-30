@@ -20,12 +20,14 @@ export const DemoCardActive = () => {
                     counter: true,
                     quantity: quantity,
                     counterSize: 24,
-                    onButtonClick: handleButtonClick
+                    onButtonClick: handleButtonClick,
+                    pulse: false,
+                    stroke: true
                 }}
             >
                 <Button.Label />
                 <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
+                <Button.Loader />
             </Button>
         </div>
     )

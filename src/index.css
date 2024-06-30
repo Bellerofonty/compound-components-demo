@@ -1,4 +1,5 @@
 @import "normalize.css";
+@import "live-indicator.css";
 @font-face {
   font-family: "Roboto";
   src: url("./fonts/Roboto-Medium.woff2") format("woff2");
@@ -69,6 +70,10 @@ body {
 .button.primary .counter {
   background: rgba(255,255,255,0.12);
 }
+.button.primary .red-dot,
+.button.primary .pulse {
+  background-color: rgba(255,255,255,0.2);
+}
 .button.secondary {
   background: rgba(131,102,86,0.122);
 }
@@ -87,6 +92,10 @@ body {
 }
 .button.secondary .loader {
   filter: brightness(0) invert(0%) sepia(0%) saturate(27%) hue-rotate(102deg) brightness(103%) contrast(106%);
+}
+.button.secondary .red-dot,
+.button.secondary .pulse {
+  background-color: rgba(46,47,51,0.2);
 }
 .button .overlay {
   position: absolute;
@@ -166,6 +175,15 @@ body {
 .button .label {
   text-overflow: ellipsis;
   overflow: hidden;
+}
+.button .live-indicator {
+  display: none;
+}
+.button.pulse .counter {
+  display: none;
+}
+.button.pulse .live-indicator {
+  display: block;
 }
 .button .counter {
   border-radius: 12px;
@@ -266,4 +284,10 @@ body {
   opacity: 0.2;
   -timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
   transition-duration: 500ms;
+}
+.button:focus-visible {
+  outline: none;
+}
+.button.enabled:focus-visible {
+  outline: 3px solid #09f;
 }

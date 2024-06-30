@@ -22,8 +22,8 @@ type Props = CommonProps & {
     quantity: number | string,
     // counterStyle: 'primary' | 'secondary',
     counterSize: 8 | 12 | 16 | 20 | 24
-    // stroke: true | false,
-    // pulse: true | false
+    stroke: true | false,
+    pulse: true | false
 }
 
 type ButtonGroupProps = PropsWithChildren & {
@@ -44,6 +44,14 @@ export const Button = ({ children, props }: ButtonGroupProps) => {
         classes.push('loading')
     } else if (props.state === 'disabled') {
         classes.push('disabled')
+    } else if (props.state === 'enabled') {
+        classes.push('enabled')
+    }
+
+    if (props.counter && props.pulse) {
+        if (props.counterSize === 8 || props.counterSize === 12) {
+            classes.push('pulse')
+        }
     }
 
     return (
@@ -88,16 +96,25 @@ const Counter = () => {
         }
     }
 
+    let classes = ['counter', `size${props.counterSize}`]
+
+
     return (
-        <div className={`counter size${props.counterSize}`}>
-            <div className="quantity">{quantity}</div>
-        </div>
+        <>
+            <div className={classes.join(" ")}>
+                <div className="quantity">{quantity}</div>
+            </div>
+            <div className="live-indicator">
+                <div className="red-dot" />
+                <div className="pulse one" />
+                <div className="pulse two" />
+            </div>
+        </>
     )
 }
 Button.Counter = Counter
 
 const Loader = () => {
-    // const {props} = useButtonGroupContext()
     return (
         <>
             <img src={loader} className="loader" alt="loader" />

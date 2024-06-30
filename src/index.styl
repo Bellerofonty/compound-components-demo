@@ -1,4 +1,5 @@
 @import "normalize.css"
+@import "live-indicator.css"
 
 @font-face
   font-family "Roboto"
@@ -73,6 +74,9 @@ color-transparent = rgba(255, 0, 0, 0)
       color button-text-color-primary
     .counter
       background rgba(button-text-color-primary, .12)
+    .red-dot
+    .pulse
+      background-color rgba(button-text-color-primary, .2)
 
   &.secondary
     background button-color-secondary
@@ -88,6 +92,9 @@ color-transparent = rgba(255, 0, 0, 0)
       background rgba(button-text-color-secondary, .12)
     .loader
       filter brightness(0) invert(0%) sepia(0%) saturate(27%) hue-rotate(102deg) brightness(103%) contrast(106%)
+    .red-dot
+    .pulse
+      background-color rgba(button-text-color-secondary, .2)
 
   .overlay
     position absolute
@@ -170,6 +177,15 @@ color-transparent = rgba(255, 0, 0, 0)
     text-overflow ellipsis
     overflow hidden
 
+  .live-indicator
+    display none
+
+  &.pulse
+    .counter
+      display none
+    .live-indicator
+      display block
+
   .counter
     border-radius 12px
     display flex
@@ -238,3 +254,8 @@ animation-settings()
     opacity 0.2
     animation-settings()
 
+.button:focus-visible
+  outline none
+
+.button.enabled:focus-visible
+  outline 3px solid #0099FF

@@ -22,8 +22,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 56,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 3,
                     counterSize: 24,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -36,8 +38,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 56,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 12345,
                     counterSize: 24,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -61,8 +65,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 56,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 3,
                     counterSize: 24,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -75,8 +81,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 56,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 12345,
                     counterSize: 24,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -89,8 +97,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 36,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 3,
                     counterSize: 20,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -103,8 +113,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 28,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 3,
                     counterSize: 12,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -165,8 +177,10 @@ export const DemoCardStatic = () => {
                     buttonSize: 56,
                     state: "enabled",
                     counter: true,
+                    pulse: false,
                     quantity: 3,
                     counterSize: 24,
+                    stroke: true
                 }}
             >
                 <Button.Label />
@@ -218,6 +232,108 @@ export const DemoCardStatic = () => {
                 }}
             >
                 <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Pulse 8",
+                    buttonStyle: "primary",
+                    buttonSize: 36,
+                    state: "enabled",
+                    counter: true,
+                    pulse: true,
+                    counterSize: 8,
+                    quantity: 3,
+                    stroke: true
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Pulse 12",
+                    buttonStyle: "primary",
+                    buttonSize: 36,
+                    state: "enabled",
+                    counter: true,
+                    pulse: true,
+                    counterSize: 12,
+                    quantity: 3,
+                    stroke: true
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Pulse 16",
+                    buttonStyle: "primary",
+                    buttonSize: 36,
+                    state: "enabled",
+                    counter: true,
+                    pulse: true,
+                    counterSize: 16,
+                    quantity: 3,
+                    stroke: true
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Pulse 20",
+                    buttonStyle: "primary",
+                    buttonSize: 36,
+                    state: "enabled",
+                    counter: true,
+                    pulse: true,
+                    counterSize: 20,
+                    quantity: 3,
+                    stroke: true
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Pulse 24",
+                    buttonStyle: "primary",
+                    buttonSize: 36,
+                    state: "enabled",
+                    counter: true,
+                    pulse: true,
+                    counterSize: 24,
+                    quantity: 3,
+                    stroke: true
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Pulse 8 secondary",
+                    buttonStyle: "secondary",
+                    buttonSize: 36,
+                    state: "enabled",
+                    counter: true,
+                    pulse: true,
+                    counterSize: 8,
+                    quantity: 3,
+                    stroke: true
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
                 <Button.Loader />
             </Button>
         </div>
