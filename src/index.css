@@ -228,8 +228,17 @@ body {
   width: 8px;
   height: 8px;
 }
+.button .counter.size8.stroke {
+  border: var(--border-widthbasecutoutouter-size-1-11);
+}
 .button .counter.size8 .quantity {
   display: none;
+}
+.button .counter.size24.stroke,
+.button .counter.size20.stroke,
+.button .counter.size16.stroke,
+.button .counter.size12.stroke {
+  border: var(--border-widthbasecutoutouter-size-12);
 }
 @-moz-keyframes shimmer-animation {
   from {

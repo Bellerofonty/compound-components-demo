@@ -97,7 +97,9 @@ const Counter = () => {
     }
 
     let classes = ['counter', `size${props.counterSize}`]
-
+    if (props.stroke) {
+        classes.push('stroke')
+    }
 
     return (
         <>
