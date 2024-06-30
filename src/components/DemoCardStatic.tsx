@@ -14,7 +14,20 @@ export const DemoCardStatic = () => {
                 }}
             >
                 <Button.Label />
-                {/*<Button.ProgressIndicator />*/}
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "primary",
+                    buttonSize: 56,
+                    state: "enabled",
+                    counter: true,
+                    quantity: 3,
+                    counterSize: 24,
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
             </Button>
             <Button
                 props={{
@@ -29,7 +42,6 @@ export const DemoCardStatic = () => {
             >
                 <Button.Label />
                 <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
             </Button>
             <Button
                 props={{
@@ -41,7 +53,6 @@ export const DemoCardStatic = () => {
                 }}
             >
                 <Button.Label />
-                {/*<Button.ProgressIndicator />*/}
             </Button>
             <Button
                 props={{
@@ -56,7 +67,6 @@ export const DemoCardStatic = () => {
             >
                 <Button.Label />
                 <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
             </Button>
             <Button
                 props={{
@@ -71,7 +81,6 @@ export const DemoCardStatic = () => {
             >
                 <Button.Label />
                 <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
             </Button>
             <Button
                 props={{
@@ -86,7 +95,6 @@ export const DemoCardStatic = () => {
             >
                 <Button.Label />
                 <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
             </Button>
             <Button
                 props={{
@@ -101,7 +109,42 @@ export const DemoCardStatic = () => {
             >
                 <Button.Label />
                 <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "primary",
+                    buttonSize: 56,
+                    state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "primary",
+                    buttonSize: 36,
+                    state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "primary",
+                    buttonSize: 28,
+                    state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
             </Button>
         </div>
     )

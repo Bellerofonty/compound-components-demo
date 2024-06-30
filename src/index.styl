@@ -46,6 +46,21 @@ button-text-color = #FFFFFF
     background-color button-text-color
     opacity 0
 
+  .loader
+    position absolute
+    margin-inline auto
+    inset-inline 0
+    inset-block-start 50%
+    transform translateY(-50%)
+    display none
+
+  &.loading
+    .label
+    .counter
+      opacity 0
+    .loader
+      display block
+
   &.size56
     padding 16px
     border-radius 16px

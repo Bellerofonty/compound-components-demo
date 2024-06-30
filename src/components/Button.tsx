@@ -1,4 +1,5 @@
 import React, {useContext, createContext, PropsWithChildren} from "react"
+import loader from '../loader.svg'
 
 type ButtonGroupContext = {
     props: Props
@@ -38,10 +39,15 @@ const useButtonGroupContext = () => {
 }
 
 export const Button = ({ children, props }: ButtonGroupProps) => {
+    let classes = ['button', `size${props.buttonSize}`]
+    if (props.state === 'loading') {
+        classes.push('loading')
+    }
+
     return (
         <ButtonGroupContext.Provider value={{props}}>
             <button
-                className={`button size${props.buttonSize}`}
+                className={classes.join(' ')}
                 onClick={(e) => props.onButtonClick && props.onButtonClick(e.currentTarget)}
             >
                 {children}
@@ -86,6 +92,6 @@ Button.Counter = Counter
 
 const Loader = () => {
     // const {props} = useButtonGroupContext()
-    return <div>Loading...</div>
+    return <img src={loader} className="loader" alt="loader" />
 }
 Button.Loader = Loader

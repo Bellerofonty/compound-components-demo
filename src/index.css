@@ -43,6 +43,21 @@ body {
   background-color: #fff;
   opacity: 0;
 }
+.button .loader {
+  position: absolute;
+  margin-inline: auto;
+  inset-inline: 0;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+  display: none;
+}
+.button.loading .label,
+.button.loading .counter {
+  opacity: 0;
+}
+.button.loading .loader {
+  display: block;
+}
 .button.size56 {
   padding: 16px;
   border-radius: 16px;
