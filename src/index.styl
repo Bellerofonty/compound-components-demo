@@ -19,6 +19,8 @@ body
   justify-content center
   height 100vh
 
+button-text-color = #FFFFFF
+
 .button
   display flex
   max-width 100%
@@ -30,7 +32,18 @@ body
   font-family 'Roboto', sans-serif
   font-weight 500
   white-space: nowrap
-  overflow: hidden
+  overflow hidden
+  position relative
+
+  .overlay
+    position absolute
+    padding 0
+    top 0
+    left 0
+    width 100%
+    height 100%
+    background-color button-text-color
+    opacity 0
 
   &.size56
     padding 16px
@@ -60,12 +73,12 @@ body
       height 16px
 
   .label
-    color #FFFFFF
+    color button-text-color
     text-overflow ellipsis
     overflow: hidden
 
   .counter
-    color #FFFFFF
+    color button-text-color
     border-radius 12px
     display flex
     align-items center
@@ -112,20 +125,27 @@ body
       .quantity
         display none
 
+animation-settings()
+  -timing-function cubic-bezier(0, -0.3, 0.5, 1.3)
+  transition-duration 500 ms
 
 .button:hover
   .label
   .counter
     transform scale(1.05)
-    -timing-function cubic-bezier(0, -0.3, 0.5, 1.3)
-    transition-duration 500 ms
+    animation-settings()
+  .overlay
+    opacity 0.12
+    animation-settings()
 
 .button:active
   .label
   .counter
     transform scale(0.95)
-    -timing-function cubic-bezier(0, -0.3, 0.5, 1.3)
-    transition-duration 500 ms
+    animation-settings()
+  .overlay
+    opacity 0.2
+    animation-settings()
 
 .product-card
   display flex

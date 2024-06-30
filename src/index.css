@@ -30,6 +30,17 @@ body {
   font-weight: 500;
   white-space: nowrap;
   overflow: hidden;
+  position: relative;
+}
+.button .overlay {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  opacity: 0;
 }
 .button.size56 {
   padding: 16px;
@@ -120,9 +131,19 @@ body {
   -timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
   transition-duration: 500ms;
 }
+.button:hover .overlay {
+  opacity: 0.12;
+  -timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
+  transition-duration: 500ms;
+}
 .button:active .label,
 .button:active .counter {
   transform: scale(0.95);
+  -timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
+  transition-duration: 500ms;
+}
+.button:active .overlay {
+  opacity: 0.2;
   -timing-function: cubic-bezier(0, -0.3, 0.5, 1.3);
   transition-duration: 500ms;
 }
