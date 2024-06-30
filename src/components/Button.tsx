@@ -63,8 +63,23 @@ const Counter = () => {
     if (!props.counter) {
         return <></>
     }
+
+    let quantity
+    if (typeof props.quantity === "number") {
+        if (props.quantity > 99) {
+            quantity = '99+'
+        } else {
+            quantity = props.quantity
+        }
+    } else {
+        quantity = props.quantity
+        if (quantity.length > 3) {
+            quantity = quantity.slice(0, 3)
+        }
+    }
+
     return <div className={`counter size${props.counterSize}`}>
-        <div className="quantity">{props.counter && props.quantity}</div>
+        <div className="quantity">{quantity}</div>
     </div>
 }
 Button.Counter = Counter
