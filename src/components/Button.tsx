@@ -92,6 +92,9 @@ Button.Counter = Counter
 
 const Loader = () => {
     // const {props} = useButtonGroupContext()
-    return <img src={loader} className="loader" alt="loader" />
+    return (<>
+        <img src={loader} className="loader" alt="loader" />
+        <div className="shimmer" />
+    </>)
 }
 Button.Loader = Loader

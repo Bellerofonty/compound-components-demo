@@ -53,6 +53,16 @@ button-text-color = #FFFFFF
     inset-block-start 50%
     transform translateY(-50%)
     display none
+    z-index 100
+
+  @keyframes shimmer-animation
+    from
+      left -33%
+    to
+      left 100%
+
+  .shimmer
+    display none
 
   &.loading
     .label
@@ -60,6 +70,20 @@ button-text-color = #FFFFFF
       opacity 0
     .loader
       display block
+    .shimmer
+      display block
+      position absolute
+      top 0
+      left -33%
+      z-index 200
+      background-image linear-gradient(90deg, rgba(255, 0, 0, 0), button-text-color, rgba(255, 0, 0, 0));
+      opacity 0.12
+      width 33%
+      height 100%
+      animation-name shimmer-animation
+      animation-timing-function linear
+      animation-duration 1000ms
+      animation-iteration-count infinite
 
   &.size56
     padding 16px

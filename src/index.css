@@ -50,6 +50,10 @@ body {
   inset-block-start: 50%;
   transform: translateY(-50%);
   display: none;
+  z-index: 100;
+}
+.button .shimmer {
+  display: none;
 }
 .button.loading .label,
 .button.loading .counter {
@@ -57,6 +61,21 @@ body {
 }
 .button.loading .loader {
   display: block;
+}
+.button.loading .shimmer {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -33%;
+  z-index: 200;
+  background-image: linear-gradient(90deg, rgba(255,0,0,0), #fff, rgba(255,0,0,0));
+  opacity: 0.12;
+  width: 33%;
+  height: 100%;
+  animation-name: shimmer-animation;
+  animation-timing-function: linear;
+  animation-duration: 1000ms;
+  animation-iteration-count: infinite;
 }
 .button.size56 {
   padding: 16px;
@@ -140,6 +159,38 @@ body {
 }
 .button .counter.size8 .quantity {
   display: none;
+}
+@-moz-keyframes shimmer-animation {
+  from {
+    left: -33%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@-webkit-keyframes shimmer-animation {
+  from {
+    left: -33%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@-o-keyframes shimmer-animation {
+  from {
+    left: -33%;
+  }
+  to {
+    left: 100%;
+  }
+}
+@keyframes shimmer-animation {
+  from {
+    left: -33%;
+  }
+  to {
+    left: 100%;
+  }
 }
 .button:hover .label,
 .button:hover .counter {
