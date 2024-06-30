@@ -1,32 +1,9 @@
-import React, {useState} from "react"
+import React from "react"
 import {Button} from './Button'
 
-export const ProductCard = () => {
-    const [quantity, setQuontity] = useState(0)
-
-    const handleButtonClick = (target: EventTarget) => {
-        setQuontity(quantity + 1)
-        console.log(target)
-    }
-
+export const DemoCardStatic = () => {
     return (
         <div className="product-card">
-            <Button
-                props={{
-                    label: "Increase counter",
-                    buttonStyle: "primary",
-                    buttonSize: 56,
-                    state: "enabled",
-                    counter: true,
-                    quantity: quantity,
-                    counterSize: 24,
-                    onButtonClick: handleButtonClick
-                }}
-            >
-                <Button.Label />
-                <Button.Counter />
-                {/*<Button.ProgressIndicator />*/}
-            </Button>
             <Button
                 props={{
                     label: "Short label",

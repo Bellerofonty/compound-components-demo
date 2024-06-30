@@ -1,10 +1,12 @@
 import React from 'react';
-import {ProductCard} from './components/ProductCard'
+import {DemoCardStatic} from './components/DemoCardStatic'
+import {DemoCardActive} from './components/DemoCardActive'
 
 function App() {
     return (
         <div className="container">
-            <ProductCard/>
+            <DemoCardActive />
+            <DemoCardStatic />
         </div>
     );
 }
