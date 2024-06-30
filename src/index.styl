@@ -20,7 +20,33 @@ body
   justify-content center
   min-height 100vh
 
-button-text-color = #FFFFFF
+.demo-card
+  display flex
+  flex-direction column
+  align-items center
+  justify-content space-evenly
+  height fit-content
+  width 340px
+  background-color #ebebeb
+  border-radius 24px
+  padding 24px
+  margin-bottom 20px
+  &:first-child
+    margin-top 20px
+
+  & > .button
+    margin-bottom 20px
+  & > .button:last-child
+    margin-bottom 0
+
+button-color-primary = #FF7700
+button-text-color-primary = #FFFFFF
+
+button-color-secondary = #8366561F
+button-text-color-secondary = #2E2F33
+counter-color-secondary = #836656
+
+color-transparent = rgba(255, 0, 0, 0)
 
 .button
   display flex
@@ -28,13 +54,40 @@ button-text-color = #FFFFFF
   width fit-content
   height fit-content
   border none
-  background #FF7700
   align-items center
   font-family 'Roboto', sans-serif
   font-weight 500
-  white-space: nowrap
+  white-space nowrap
   overflow hidden
   position relative
+
+  &.primary
+    background button-color-primary
+
+    .overlay
+      background-color button-text-color-primary
+    .shimmer
+      background-image linear-gradient(90deg, color-transparent, button-text-color-primary, color-transparent)
+    .label
+    .counter
+      color button-text-color-primary
+    .counter
+      background rgba(button-text-color-primary, .12)
+
+  &.secondary
+    background button-color-secondary
+
+    .overlay
+      background-color button-text-color-secondary
+    .shimmer
+      background-image linear-gradient(90deg, color-transparent, button-text-color-secondary, color-transparent)
+    .label
+    .counter
+      color button-text-color-secondary
+    .counter
+      background rgba(button-text-color-secondary, .12)
+    .loader
+      filter brightness(0) invert(0%) sepia(0%) saturate(27%) hue-rotate(102deg) brightness(103%) contrast(106%)
 
   .overlay
     position absolute
@@ -43,7 +96,6 @@ button-text-color = #FFFFFF
     left 0
     width 100%
     height 100%
-    background-color button-text-color
     opacity 0
 
   .loader
@@ -76,7 +128,6 @@ button-text-color = #FFFFFF
       top 0
       left -33%
       z-index 200
-      background-image linear-gradient(90deg, rgba(255, 0, 0, 0), button-text-color, rgba(255, 0, 0, 0));
       opacity 0.12
       width 33%
       height 100%
@@ -84,6 +135,9 @@ button-text-color = #FFFFFF
       animation-timing-function linear
       animation-duration 1000ms
       animation-iteration-count infinite
+
+  &.disabled
+    opacity 0.36
 
   &.size56
     padding 16px
@@ -113,18 +167,15 @@ button-text-color = #FFFFFF
       height 16px
 
   .label
-    color button-text-color
     text-overflow ellipsis
-    overflow: hidden
+    overflow hidden
 
   .counter
-    color button-text-color
     border-radius 12px
     display flex
     align-items center
     justify-content center
     margin-left 8px
-    background: #FFFFFF1F
     flex-shrink 0
 
     &.size24
@@ -169,7 +220,7 @@ animation-settings()
   -timing-function cubic-bezier(0, -0.3, 0.5, 1.3)
   transition-duration 500 ms
 
-.button:hover
+.button:not(.disabled):hover
   .label
   .counter
     transform scale(1.05)
@@ -178,7 +229,7 @@ animation-settings()
     opacity 0.12
     animation-settings()
 
-.button:active
+.button:not(.disabled):active
   .label
   .counter
     transform scale(0.95)
@@ -187,21 +238,3 @@ animation-settings()
     opacity 0.2
     animation-settings()
 
-.product-card
-  display flex
-  flex-direction column
-  align-items center
-  justify-content: space-evenly;
-  height fit-content
-  width 340px
-  background-color #ebebeb
-  border-radius 24px
-  padding 24px
-  margin-bottom 20px
-  &:first-child
-    margin-top 20px
-
-  & > .button
-    margin-bottom 20px
-  & > .button:last-child
-    margin-bottom 0

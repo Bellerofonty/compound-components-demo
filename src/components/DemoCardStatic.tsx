@@ -3,7 +3,7 @@ import {Button} from './Button'
 
 export const DemoCardStatic = () => {
     return (
-        <div className="product-card">
+        <div className="demo-card">
             <Button
                 props={{
                     label: "Short label",
@@ -140,6 +140,80 @@ export const DemoCardStatic = () => {
                     buttonStyle: "primary",
                     buttonSize: 28,
                     state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Disabled",
+                    buttonStyle: "primary",
+                    buttonSize: 28,
+                    state: "disabled",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "secondary",
+                    buttonSize: 56,
+                    state: "enabled",
+                    counter: true,
+                    quantity: 3,
+                    counterSize: 24,
+                }}
+            >
+                <Button.Label />
+                <Button.Counter />
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "secondary",
+                    buttonSize: 56,
+                    state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "secondary",
+                    buttonSize: 36,
+                    state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Short label",
+                    buttonStyle: "secondary",
+                    buttonSize: 28,
+                    state: "loading",
+                    counter: false
+                }}
+            >
+                <Button.Label />
+                <Button.Loader />
+            </Button>
+            <Button
+                props={{
+                    label: "Disabled",
+                    buttonStyle: "secondary",
+                    buttonSize: 28,
+                    state: "disabled",
                     counter: false
                 }}
             >

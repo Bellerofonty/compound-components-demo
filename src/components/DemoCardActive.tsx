@@ -10,7 +10,7 @@ export const DemoCardActive = () => {
     }
 
     return (
-        <div className="product-card">
+        <div className="demo-card">
             <Button
                 props={{
                     label: "Increase counter",

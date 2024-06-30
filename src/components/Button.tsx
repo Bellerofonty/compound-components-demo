@@ -39,19 +39,24 @@ const useButtonGroupContext = () => {
 }
 
 export const Button = ({ children, props }: ButtonGroupProps) => {
-    let classes = ['button', `size${props.buttonSize}`]
+    let classes = ['button', `size${props.buttonSize}`, `${props.buttonStyle}`]
     if (props.state === 'loading') {
         classes.push('loading')
+    } else if (props.state === 'disabled') {
+        classes.push('disabled')
     }
 
     return (
         <ButtonGroupContext.Provider value={{props}}>
             <button
                 className={classes.join(' ')}
-                onClick={(e) => props.onButtonClick && props.onButtonClick(e.currentTarget)}
+                onClick={(e) => props.state !== "disabled" ?
+                    props.onButtonClick && props.onButtonClick(e.currentTarget) :
+                    () => {}
+                }
             >
                 {children}
-                <div className="overlay"/>
+                <div className="overlay" />
             </button>
         </ButtonGroupContext.Provider>
     )
@@ -59,8 +64,7 @@ export const Button = ({ children, props }: ButtonGroupProps) => {
 
 const Label = () => {
     const {props} = useButtonGroupContext()
-    return <div className="label">{props.label}
-    </div>
+    return <div className="label">{props.label}</div>
 }
 Button.Label = Label
 
@@ -84,17 +88,21 @@ const Counter = () => {
         }
     }
 
-    return <div className={`counter size${props.counterSize}`}>
-        <div className="quantity">{quantity}</div>
-    </div>
+    return (
+        <div className={`counter size${props.counterSize}`}>
+            <div className="quantity">{quantity}</div>
+        </div>
+    )
 }
 Button.Counter = Counter
 
 const Loader = () => {
     // const {props} = useButtonGroupContext()
-    return (<>
-        <img src={loader} className="loader" alt="loader" />
-        <div className="shimmer" />
-    </>)
+    return (
+        <>
+            <img src={loader} className="loader" alt="loader" />
+            <div className="shimmer" />
+        </>
+    )
 }
 Button.Loader = Loader
