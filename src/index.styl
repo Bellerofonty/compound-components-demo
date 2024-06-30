@@ -70,10 +70,7 @@ color-transparent = rgba(255, 0, 0, 0)
     .shimmer
       background-image linear-gradient(90deg, color-transparent, button-text-color-primary, color-transparent)
     .label
-    .counter
       color button-text-color-primary
-    .counter
-      background rgba(button-text-color-primary, .12)
     .red-dot
     .pulse
       background-color rgba(button-text-color-primary, .2)
@@ -86,10 +83,7 @@ color-transparent = rgba(255, 0, 0, 0)
     .shimmer
       background-image linear-gradient(90deg, color-transparent, button-text-color-secondary, color-transparent)
     .label
-    .counter
       color button-text-color-secondary
-    .counter
-      background rgba(button-text-color-secondary, .12)
     .loader
       filter brightness(0) invert(0%) sepia(0%) saturate(27%) hue-rotate(102deg) brightness(103%) contrast(106%)
     .red-dot
@@ -193,6 +187,14 @@ color-transparent = rgba(255, 0, 0, 0)
     justify-content center
     margin-left 8px
     flex-shrink 0
+
+    &.primary
+      color button-text-color-primary
+      background rgba(button-text-color-primary, .12)
+
+    &.secondary
+      color button-text-color-secondary
+      background rgba(button-text-color-secondary, .12)
 
     &.size24
       min-height 24px

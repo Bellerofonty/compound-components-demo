@@ -20,7 +20,7 @@ type Props = CommonProps & {
 } | CommonProps & {
     counter: true,
     quantity: number | string,
-    // counterStyle: 'primary' | 'secondary',
+    counterStyle: 'primary' | 'secondary',
     counterSize: 8 | 12 | 16 | 20 | 24
     stroke: true | false,
     pulse: true | false
@@ -97,8 +97,15 @@ const Counter = () => {
     }
 
     let classes = ['counter', `size${props.counterSize}`]
+
     if (props.stroke) {
         classes.push('stroke')
+    }
+
+    if (props.counterStyle === 'primary') {
+        classes.push('primary')
+    } else {
+        classes.push('secondary')
     }
 
     return (

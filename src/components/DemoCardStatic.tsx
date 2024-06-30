@@ -25,7 +25,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 3,
                     counterSize: 24,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -41,7 +42,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 12345,
                     counterSize: 24,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -68,7 +70,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 3,
                     counterSize: 24,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -84,7 +87,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 12345,
                     counterSize: 24,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -100,7 +104,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 3,
                     counterSize: 20,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -116,7 +121,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 3,
                     counterSize: 12,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -180,7 +186,8 @@ export const DemoCardStatic = () => {
                     pulse: false,
                     quantity: 3,
                     counterSize: 24,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "secondary"
                 }}
             >
                 <Button.Label />
@@ -244,7 +251,8 @@ export const DemoCardStatic = () => {
                     pulse: true,
                     counterSize: 8,
                     quantity: 3,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -261,7 +269,8 @@ export const DemoCardStatic = () => {
                     pulse: true,
                     counterSize: 12,
                     quantity: 3,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -278,7 +287,8 @@ export const DemoCardStatic = () => {
                     pulse: true,
                     counterSize: 16,
                     quantity: 3,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -295,7 +305,8 @@ export const DemoCardStatic = () => {
                     pulse: true,
                     counterSize: 20,
                     quantity: 3,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -312,7 +323,8 @@ export const DemoCardStatic = () => {
                     pulse: true,
                     counterSize: 24,
                     quantity: 3,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />
@@ -329,7 +341,8 @@ export const DemoCardStatic = () => {
                     pulse: true,
                     counterSize: 8,
                     quantity: 3,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "secondary"
                 }}
             >
                 <Button.Label />

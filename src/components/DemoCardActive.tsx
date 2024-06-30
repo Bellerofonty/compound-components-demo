@@ -22,7 +22,8 @@ export const DemoCardActive = () => {
                     counterSize: 24,
                     onButtonClick: handleButtonClick,
                     pulse: false,
-                    stroke: true
+                    stroke: true,
+                    counterStyle: "primary"
                 }}
             >
                 <Button.Label />

@@ -63,12 +63,8 @@ body {
 .button.primary .shimmer {
   background-image: linear-gradient(90deg, rgba(255,0,0,0), #fff, rgba(255,0,0,0));
 }
-.button.primary .label,
-.button.primary .counter {
+.button.primary .label {
   color: #fff;
-}
-.button.primary .counter {
-  background: rgba(255,255,255,0.12);
 }
 .button.primary .red-dot,
 .button.primary .pulse {
@@ -83,12 +79,8 @@ body {
 .button.secondary .shimmer {
   background-image: linear-gradient(90deg, rgba(255,0,0,0), #2e2f33, rgba(255,0,0,0));
 }
-.button.secondary .label,
-.button.secondary .counter {
+.button.secondary .label {
   color: #2e2f33;
-}
-.button.secondary .counter {
-  background: rgba(46,47,51,0.12);
 }
 .button.secondary .loader {
   filter: brightness(0) invert(0%) sepia(0%) saturate(27%) hue-rotate(102deg) brightness(103%) contrast(106%);
@@ -192,6 +184,14 @@ body {
   justify-content: center;
   margin-left: 8px;
   flex-shrink: 0;
+}
+.button .counter.primary {
+  color: #fff;
+  background: rgba(255,255,255,0.12);
+}
+.button .counter.secondary {
+  color: #2e2f33;
+  background: rgba(46,47,51,0.12);
 }
 .button .counter.size24 {
   min-height: 24px;
