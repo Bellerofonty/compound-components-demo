@@ -1,12 +1,23 @@
 import React, {useState} from "react"
 import {Button} from './Button'
 
+type State = 'enabled' | 'loading' | 'disabled'
+
 export const DemoCardActive = () => {
-    const [quantity, setQuontity] = useState(0)
+    const [quantity, setQuantity] = useState(0)
+    const [state, setState] = useState<State>('enabled')
 
     const handleButtonClick = (target: EventTarget) => {
-        setQuontity(quantity + 1)
-        console.log(target)
+        setState('loading')
+        setTimeout(() => {
+            let currentQuantity = quantity + 1
+            if (currentQuantity >= 5) {
+                setState('disabled')
+            } else {
+                setState('enabled')
+            }
+            setQuantity(currentQuantity)
+        }, 1000)
     }
 
     return (
@@ -16,7 +27,7 @@ export const DemoCardActive = () => {
                     label: "Increase counter",
                     buttonStyle: "primary",
                     buttonSize: 56,
-                    state: "enabled",
+                    state: state,
                     counter: true,
                     quantity: quantity,
                     counterSize: 24,
