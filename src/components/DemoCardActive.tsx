@@ -4,14 +4,14 @@ import {Button} from './Button'
 type State = 'enabled' | 'loading' | 'disabled'
 
 export const DemoCardActive = () => {
-    const [quantity, setQuantity] = useState(0)
+    const [quantity, setQuantity] = useState(95)
     const [state, setState] = useState<State>('enabled')
 
     const handleButtonClick = (target: EventTarget) => {
         setState('loading')
         setTimeout(() => {
             let currentQuantity = quantity + 1
-            if (currentQuantity >= 5) {
+            if (currentQuantity >= 100) {
                 setState('disabled')
             } else {
                 setState('enabled')
