@@ -40,11 +40,11 @@ body
   & > .button:last-child
     margin-bottom 0
 
-button-color-primary = #FF7700
-button-text-color-primary = #FFFFFF
+button-background-color-primary = #FF7700
+button-color-primary = #FFFFFF
 
-button-color-secondary = #8366561F
-button-text-color-secondary = #2E2F33
+button-background-color-secondary = #8366561F
+button-color-secondary = #2E2F33
 counter-color-secondary = #836656
 
 color-transparent = rgba(255, 0, 0, 0)
@@ -63,32 +63,32 @@ color-transparent = rgba(255, 0, 0, 0)
   position relative
 
   &.primary
-    background button-color-primary
+    background button-background-color-primary
 
     .overlay
-      background-color button-text-color-primary
+      background-color button-color-primary
     .shimmer
-      background-image linear-gradient(90deg, color-transparent, button-text-color-primary, color-transparent)
+      background-image linear-gradient(90deg, color-transparent, button-color-primary, color-transparent)
     .label
-      color button-text-color-primary
+      color button-color-primary
     .red-dot
     .pulse
-      background-color rgba(button-text-color-primary, .2)
+      background-color rgba(button-color-primary, .2)
 
   &.secondary
-    background button-color-secondary
+    background button-background-color-secondary
 
     .overlay
-      background-color button-text-color-secondary
+      background-color button-color-secondary
     .shimmer
-      background-image linear-gradient(90deg, color-transparent, button-text-color-secondary, color-transparent)
+      background-image linear-gradient(90deg, color-transparent, button-color-secondary, color-transparent)
     .label
-      color button-text-color-secondary
+      color button-color-secondary
     .loader
       filter brightness(0) invert(0%) sepia(0%) saturate(27%) hue-rotate(102deg) brightness(103%) contrast(106%)
     .red-dot
     .pulse
-      background-color rgba(button-text-color-secondary, .2)
+      background-color rgba(button-color-secondary, .2)
 
   .overlay
     position absolute
@@ -189,12 +189,12 @@ color-transparent = rgba(255, 0, 0, 0)
     flex-shrink 0
 
     &.primary
-      color button-text-color-primary
-      background rgba(button-text-color-primary, .12)
+      color button-color-primary
+      background rgba(button-color-primary, .12)
 
     &.secondary
-      color button-text-color-secondary
-      background rgba(button-text-color-secondary, .12)
+      color button-color-secondary
+      background rgba(button-color-secondary, .12)
 
     &.size24
       min-height 24px
