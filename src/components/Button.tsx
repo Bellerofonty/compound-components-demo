@@ -1,11 +1,11 @@
 import React, {useContext, createContext, PropsWithChildren} from "react"
 import loader from '../loader.svg'
 
-type ButtonGroupContext = {
+type ButtonContext = {
     props: Props
 }
 
-const ButtonGroupContext = createContext<ButtonGroupContext | undefined>(undefined)
+const ButtonContext = createContext<ButtonContext | undefined>(undefined)
 
 type CommonProps = {
     label: string,
@@ -26,19 +26,19 @@ type Props = CommonProps & {
     pulse: true | false
 }
 
-type ButtonGroupProps = PropsWithChildren & {
+export type ButtonProps = PropsWithChildren & {
     props: Props
 }
 
-const useButtonGroupContext = () => {
-    const context = useContext(ButtonGroupContext)
+const useButtonContext = () => {
+    const context = useContext(ButtonContext)
     if (!context) {
-        throw new Error('useButtonGroupContext must be used within ButtonGroup')
+        throw new Error('useButtonContext must be used within Button')
     }
     return context
 }
 
-export const Button = ({ children, props }: ButtonGroupProps) => {
+export const Button = ({ children, props }: ButtonProps) => {
     let classes = ['button', `size${props.buttonSize}`, `${props.buttonStyle}`]
     if (props.state === 'loading') {
         classes.push('loading')
@@ -55,7 +55,7 @@ export const Button = ({ children, props }: ButtonGroupProps) => {
     }
 
     return (
-        <ButtonGroupContext.Provider value={{props}}>
+        <ButtonContext.Provider value={{props}}>
             <button
                 className={classes.join(' ')}
                 onClick={(e) => props.state !== "disabled" ?
@@ -66,18 +66,18 @@ export const Button = ({ children, props }: ButtonGroupProps) => {
                 {children}
                 <div className="overlay" />
             </button>
-        </ButtonGroupContext.Provider>
+        </ButtonContext.Provider>
     )
 }
 
 const Label = () => {
-    const {props} = useButtonGroupContext()
+    const {props} = useButtonContext()
     return <div className="label">{props.label}</div>
 }
 Button.Label = Label
 
 const Counter = () => {
-    const {props} = useButtonGroupContext()
+    const {props} = useButtonContext()
     if (!props.counter) {
         return <></>
     }
