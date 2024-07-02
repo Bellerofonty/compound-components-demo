@@ -138,6 +138,7 @@ body {
   padding: 16px;
   border-radius: 16px;
   font-size: 17px;
+  line-height: 24px;
   column-gap: 8px;
 }
 .button.size56 .loader {
@@ -148,6 +149,7 @@ body {
   padding: 8px 12px;
   border-radius: 12px;
   font-size: 15px;
+  line-height: 20px;
   column-gap: 6px;
 }
 .button.size36 .loader {
@@ -158,6 +160,7 @@ body {
   padding: 6px 10px;
   border-radius: 9.3px;
   font-size: 13px;
+  line-height: 16px;
   column-gap: 4px;
 }
 .button.size28 .loader {
