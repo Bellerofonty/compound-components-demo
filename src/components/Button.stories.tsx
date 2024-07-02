@@ -63,31 +63,31 @@ const Template = (args: ButtonProps) => <Button {...args}>
 
 export const Default = Template.bind({})
 
-// Default.args = {
-//     props: {
-//         label: "Short label",
-//         buttonStyle: "primary",
-//         buttonSize: 56,
-//         state: "enabled",
-//         counter: false
-//     }
-// }
+Default.args = {
+    props: {
+        label: "Short label",
+        buttonStyle: "primary",
+        buttonSize: 56,
+        state: "enabled",
+        counter: false
+    }
+}
 
 export const DefaultWithCounter = Template.bind({})
-// DefaultWithCounter.args = {
-//     props: {
-//         label: "Short label",
-//         buttonStyle: "primary",
-//         buttonSize: 56,
-//         state: "enabled",
-//         counter: true,
-//         pulse: false,
-//         quantity: 3,
-//         counterSize: 24,
-//         stroke: true,
-//         counterStyle: "primary"
-//     }
-// }
+DefaultWithCounter.args = {
+    props: {
+        label: "Short label",
+        buttonStyle: "primary",
+        buttonSize: 56,
+        state: "enabled",
+        counter: true,
+        pulse: false,
+        quantity: 3,
+        counterSize: 24,
+        stroke: true,
+        counterStyle: "primary"
+    }
+}
 
 
 
