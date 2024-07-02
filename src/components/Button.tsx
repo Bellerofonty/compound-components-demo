@@ -1,11 +1,11 @@
 import React, {useContext, createContext, PropsWithChildren} from "react"
 import loader from '../loader.svg'
 
-type ButtonContext = {
+type ButtonContextType = {
     props: Props
 }
 
-const ButtonContext = createContext<ButtonContext | undefined>(undefined)
+const ButtonContext = createContext<ButtonContextType | undefined>(undefined)
 
 type CommonProps = {
     label: string,
@@ -15,7 +15,7 @@ type CommonProps = {
     onButtonClick?: Function
 }
 
-type Props = CommonProps & {
+export type Props = CommonProps & {
     counter: false
 } | CommonProps & {
     counter: true,
