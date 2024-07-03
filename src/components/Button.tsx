@@ -48,10 +48,8 @@ export const Button = ({ children, props }: ButtonProps) => {
         classes.push('enabled')
     }
 
-    if (props.counter && props.pulse) {
-        if (props.counterSize === 8 || props.counterSize === 12) {
-            classes.push('pulse')
-        }
+    if (props.counter && props.pulse && (props.counterSize === 8 || props.counterSize === 12)) {
+        classes.push('pulse')
     }
 
     return (
@@ -60,7 +58,7 @@ export const Button = ({ children, props }: ButtonProps) => {
                 className={classes.join(' ')}
                 onClick={(e) => props.state !== "disabled" ?
                     props.onButtonClick && props.onButtonClick(e.currentTarget) :
-                    () => {}
+                    undefined
                 }
             >
                 {children}
@@ -76,24 +74,28 @@ const Label = () => {
 }
 Button.Label = Label
 
+const getQuantity = (quantity: number | string) => {
+    let newQuantity
+    if (typeof quantity === 'number') {
+        if (quantity > 99) {
+            newQuantity = '99+'
+        } else {
+            newQuantity = quantity
+        }
+    } else {
+        newQuantity = quantity
+        if (newQuantity.length > 3) {
+            newQuantity = newQuantity.slice(0, 3)
+        }
+    }
+
+    return newQuantity
+}
+
 const Counter = () => {
     const {props} = useButtonContext()
     if (!props.counter) {
         return <></>
-    }
-
-    let quantity
-    if (typeof props.quantity === "number") {
-        if (props.quantity > 99) {
-            quantity = '99+'
-        } else {
-            quantity = props.quantity
-        }
-    } else {
-        quantity = props.quantity
-        if (quantity.length > 3) {
-            quantity = quantity.slice(0, 3)
-        }
     }
 
     let classes = ['counter', `size${props.counterSize}`]
@@ -107,6 +109,8 @@ const Counter = () => {
     } else {
         classes.push('secondary')
     }
+
+    const quantity = getQuantity(props.quantity)
 
     return (
         <>
